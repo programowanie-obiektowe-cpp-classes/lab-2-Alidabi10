@@ -43,7 +43,7 @@ public:
 	}
 
 //Operator przypisania przenoszacego
-ResourceManagaer& operator = (ResourceManager&& other) noexcept
+ResourceManager& operator = (ResourceManager&& other) noexcept
 {
 	if (this!=&other)
 	{
