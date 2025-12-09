@@ -35,6 +35,24 @@ public:
 		}
 		return *this;
 	}
+//Konstruktor przenoszacy
+	ResourceManager(ResourceManager&& other) noexcept
+	{
+		this->resource = other.resource;
+		other.resource = nullptr;
+	}
+
+//Operator przypisania przenoszacego
+ResourceManagaer& operator = (ResourceManager&& other) noexcept
+{
+	if (this!=&other)
+	{
+		delete this->resource;
+		this->resource = other.resource;
+		other.resource = nullptr;
+	}
+	return *this;
+}
 	double get() const 
 	{
 		return (*resource).get();
